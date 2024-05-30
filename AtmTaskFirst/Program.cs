@@ -18,20 +18,20 @@ class Program
 
         long resultSum = 0;
         string inputSum;
-        long resSum; // Изменено на long, чтобы избежать использования Nullable
+        long resSum; 
 
         do
         {
             Console.WriteLine("Введите целое положительное число, которое хотите разложить:");
             inputSum = Console.ReadLine();
-            resSum = TryParsePositiveInteger(inputSum); // Используем long вместо long?
+            resSum = TryParsePositiveInteger(inputSum); 
 
-            if (resSum != 0) // Проверяем, что resSum не равно 0, а не null
+            if (resSum != 0) 
             {
                 resultSum = resSum;
             }
 
-        } while (resSum == 0); // Проверяем, что resSum равно 0, а не null
+        } while (resSum == 0); 
 
         Console.WriteLine($"Целевая сумма: {resultSum}");
         Console.WriteLine("Идёт подсчёт...");
@@ -65,7 +65,7 @@ class Program
         if (strNominals.Contains(' ') || strNominals.Contains('\t'))
         {
             Console.WriteLine("Ошибка: в середине строки не должно быть пробелов или табуляций. Пожалуйста, введите строку заново.");
-            return 0; // Возвращаем 0, если ввод некорректен
+            return 0; 
         }
 
         if (double.TryParse(strNominals, out double number))
@@ -73,7 +73,7 @@ class Program
             if (strNominals.Contains('E') || strNominals.Contains('e'))
             {
                 Console.WriteLine($"Некорректное значение: {strNominals}. Введите только целые положительные числа без экспоненциальной нотации. Пожалуйста, введите строку заново.");
-                return 0; // Возвращаем 0, если ввод некорректен
+                return 0;
             }
 
             if (number >= 0 && number == (int)number)
@@ -83,13 +83,13 @@ class Program
             else
             {
                 Console.WriteLine($"Некорректное значение: {strNominals}. Введите только целые положительные числа. Пожалуйста, введите строку заново.");
-                return 0; // Возвращаем 0, если ввод некорректен
+                return 0; 
             }
         }
         else
         {
             Console.WriteLine($"Некорректное значение: {strNominals}. Это не число. Пожалуйста, введите строку заново.");
-            return 0; // Возвращаем 0, если ввод некорректен
+            return 0; 
         }
     }
     private static List<int> NominalsCheck(string strNominals)
