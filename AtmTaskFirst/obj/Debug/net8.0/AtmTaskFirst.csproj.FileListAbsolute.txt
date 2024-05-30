@@ -1,0 +1,15 @@
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\bin\Debug\net8.0\AtmTaskFirst.exe
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\bin\Debug\net8.0\AtmTaskFirst.deps.json
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\bin\Debug\net8.0\AtmTaskFirst.runtimeconfig.json
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\bin\Debug\net8.0\AtmTaskFirst.dll
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\bin\Debug\net8.0\AtmTaskFirst.pdb
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\obj\Debug\net8.0\AtmTaskFirst.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\obj\Debug\net8.0\AtmTaskFirst.AssemblyInfoInputs.cache
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\obj\Debug\net8.0\AtmTaskFirst.AssemblyInfo.cs
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\obj\Debug\net8.0\AtmTaskFirst.csproj.CoreCompileInputs.cache
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\obj\Debug\net8.0\AtmTaskFirst.sourcelink.json
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\obj\Debug\net8.0\AtmTaskFirst.dll
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\obj\Debug\net8.0\refint\AtmTaskFirst.dll
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\obj\Debug\net8.0\AtmTaskFirst.pdb
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\obj\Debug\net8.0\AtmTaskFirst.genruntimeconfig.cache
+C:\Users\HOME\RiderProjects\AtmTaskFirst\AtmTaskFirst\obj\Debug\net8.0\ref\AtmTaskFirst.dll
