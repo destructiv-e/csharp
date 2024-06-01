@@ -1,4 +1,6 @@
-﻿namespace CalculatorTaskSecond
+﻿using System.Windows.Forms;
+
+namespace CalculatorTaskSecond
 {
     partial class Form1
     {
@@ -29,396 +31,395 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.top_label = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.roundButton2 = new RoundButton();
-            this.roundButton1 = new RoundButton();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.roundButton5 = new RoundButton();
-            this.roundButton3 = new RoundButton();
-            this.roundButton6 = new RoundButton();
-            this.roundButton7 = new RoundButton();
-            this.roundButton9 = new RoundButton();
-            this.roundButton10 = new RoundButton();
-            this.roundButton12 = new RoundButton();
-            this.roundButton13 = new RoundButton();
-            this.roundButton14 = new RoundButton();
-            this.roundButton15 = new RoundButton();
-            this.roundButton16 = new RoundButton();
-            this.roundButton4 = new RoundButton();
-            this.roundButton8 = new RoundButton();
-            this.roundButton11 = new RoundButton();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.button_three = new RoundButton();
+            this.button_four = new RoundButton();
+            this.button_left_parenthesis = new RoundButton();
+            this.button_right_parenthesis = new RoundButton();
+            this.button_equals = new RoundButton();
+            this.button_sum = new RoundButton();
+            this.button_dot = new RoundButton();
+            this.button_zero = new RoundButton();
+            this.button_minus = new RoundButton();
+            this.button_one = new RoundButton();
+            this.button_two = new RoundButton();
+            this.button_six = new RoundButton();
+            this.button_mul = new RoundButton();
+            this.button_division = new RoundButton();
+            this.button_delete = new RoundButton();
+            this.textBox_input = new System.Windows.Forms.TextBox();
+            this.button_five = new RoundButton();
+            this.textBox_output = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // top_label
+            // button_three
             // 
-            this.top_label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
-            this.top_label.Dock = System.Windows.Forms.DockStyle.Top;
-            this.top_label.Font = new System.Drawing.Font("Gadugi", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.top_label.ForeColor = System.Drawing.SystemColors.Control;
-            this.top_label.Location = new System.Drawing.Point(0, 0);
-            this.top_label.Name = "top_label";
-            this.top_label.Size = new System.Drawing.Size(477, 85);
-            this.top_label.TabIndex = 0;
-            this.top_label.Text = "0";
-            this.top_label.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_three.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_three.BackColor2 = System.Drawing.Color.Silver;
+            this.button_three.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_three.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_three.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_three.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_three.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_three.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_three.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_three.ButtonRoundRadius = 30;
+            this.button_three.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_three.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_three.Location = new System.Drawing.Point(0, 276);
+            this.button_three.Margin = new System.Windows.Forms.Padding(0);
+            this.button_three.Name = "button_three";
+            this.button_three.Size = new System.Drawing.Size(192, 87);
+            this.button_three.TabIndex = 3;
+            this.button_three.Text = "3";
+            this.button_three.Click += new System.EventHandler(this.button_three_Click);
             // 
-            // panel1
+            // button_four
             // 
-            this.panel1.Controls.Add(this.roundButton6);
-            this.panel1.Controls.Add(this.roundButton2);
-            this.panel1.Controls.Add(this.roundButton1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 85);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(477, 90);
-            this.panel1.TabIndex = 1;
+            this.button_four.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_four.BackColor2 = System.Drawing.Color.Silver;
+            this.button_four.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_four.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_four.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_four.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_four.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_four.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_four.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_four.ButtonRoundRadius = 30;
+            this.button_four.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_four.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_four.Location = new System.Drawing.Point(192, 276);
+            this.button_four.Name = "button_four";
+            this.button_four.Size = new System.Drawing.Size(192, 87);
+            this.button_four.TabIndex = 2;
+            this.button_four.Text = "4";
+            this.button_four.Click += new System.EventHandler(this.button_four_Click);
             // 
-            // roundButton2
+            // button_left_parenthesis
             // 
-            this.roundButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton2.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton2.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton2.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton2.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton2.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton2.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton2.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton2.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton2.ButtonRoundRadius = 30;
-            this.roundButton2.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton2.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton2.Location = new System.Drawing.Point(384, 3);
-            this.roundButton2.Name = "roundButton2";
-            this.roundButton2.Size = new System.Drawing.Size(90, 87);
-            this.roundButton2.TabIndex = 2;
-            this.roundButton2.Text = "⌦";
+            this.button_left_parenthesis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_left_parenthesis.BackColor2 = System.Drawing.Color.Silver;
+            this.button_left_parenthesis.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_left_parenthesis.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_left_parenthesis.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_left_parenthesis.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_left_parenthesis.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_left_parenthesis.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_left_parenthesis.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_left_parenthesis.ButtonRoundRadius = 30;
+            this.button_left_parenthesis.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_left_parenthesis.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_left_parenthesis.Location = new System.Drawing.Point(0, 544);
+            this.button_left_parenthesis.Name = "button_left_parenthesis";
+            this.button_left_parenthesis.Size = new System.Drawing.Size(99, 87);
+            this.button_left_parenthesis.TabIndex = 5;
+            this.button_left_parenthesis.Text = "(";
+            this.button_left_parenthesis.Click += new System.EventHandler(this.button_left_parenthesis_Click);
             // 
-            // roundButton1
+            // button_right_parenthesis
             // 
-            this.roundButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton1.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton1.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton1.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton1.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton1.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton1.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton1.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton1.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton1.ButtonRoundRadius = 30;
-            this.roundButton1.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton1.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton1.Location = new System.Drawing.Point(195, 3);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(189, 87);
-            this.roundButton1.TabIndex = 1;
-            this.roundButton1.Text = "6";
+            this.button_right_parenthesis.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_right_parenthesis.BackColor2 = System.Drawing.Color.Silver;
+            this.button_right_parenthesis.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_right_parenthesis.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_right_parenthesis.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_right_parenthesis.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_right_parenthesis.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_right_parenthesis.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_right_parenthesis.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_right_parenthesis.ButtonRoundRadius = 30;
+            this.button_right_parenthesis.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_right_parenthesis.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_right_parenthesis.Location = new System.Drawing.Point(98, 544);
+            this.button_right_parenthesis.Name = "button_right_parenthesis";
+            this.button_right_parenthesis.Size = new System.Drawing.Size(97, 87);
+            this.button_right_parenthesis.TabIndex = 6;
+            this.button_right_parenthesis.Text = ")";
+            this.button_right_parenthesis.Click += new System.EventHandler(this.button_right_parenthesis_Click);
             // 
-            // panel2
+            // button_equals
             // 
-            this.panel2.Controls.Add(this.roundButton10);
-            this.panel2.Controls.Add(this.roundButton7);
-            this.panel2.Controls.Add(this.roundButton3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 175);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(477, 90);
-            this.panel2.TabIndex = 2;
+            this.button_equals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_equals.BackColor2 = System.Drawing.Color.Silver;
+            this.button_equals.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_equals.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_equals.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_equals.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_equals.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_equals.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_equals.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_equals.ButtonRoundRadius = 30;
+            this.button_equals.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_equals.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_equals.Location = new System.Drawing.Point(195, 544);
+            this.button_equals.Name = "button_equals";
+            this.button_equals.Size = new System.Drawing.Size(186, 87);
+            this.button_equals.TabIndex = 7;
+            this.button_equals.Text = "=";
+            this.button_equals.Click += new System.EventHandler(this.button_equals_Click);
             // 
-            // panel4
+            // button_sum
             // 
-            this.panel4.Controls.Add(this.roundButton12);
-            this.panel4.Controls.Add(this.roundButton9);
-            this.panel4.Controls.Add(this.roundButton5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 265);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(477, 91);
-            this.panel4.TabIndex = 4;
+            this.button_sum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_sum.BackColor2 = System.Drawing.Color.Silver;
+            this.button_sum.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_sum.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_sum.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_sum.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_sum.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_sum.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_sum.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_sum.ButtonRoundRadius = 30;
+            this.button_sum.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_sum.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_sum.Location = new System.Drawing.Point(381, 544);
+            this.button_sum.Name = "button_sum";
+            this.button_sum.Size = new System.Drawing.Size(93, 87);
+            this.button_sum.TabIndex = 8;
+            this.button_sum.Text = "+";
+            this.button_sum.Click += new System.EventHandler(this.button_sum_Click);
             // 
-            // roundButton5
+            // button_dot
             // 
-            this.roundButton5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton5.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton5.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton5.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton5.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton5.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton5.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton5.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton5.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton5.ButtonRoundRadius = 30;
-            this.roundButton5.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton5.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton5.Location = new System.Drawing.Point(195, 3);
-            this.roundButton5.Name = "roundButton5";
-            this.roundButton5.Size = new System.Drawing.Size(189, 87);
-            this.roundButton5.TabIndex = 2;
-            this.roundButton5.Text = "2";
+            this.button_dot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_dot.BackColor2 = System.Drawing.Color.Silver;
+            this.button_dot.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_dot.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_dot.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_dot.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_dot.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_dot.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_dot.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_dot.ButtonRoundRadius = 30;
+            this.button_dot.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_dot.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_dot.Location = new System.Drawing.Point(0, 454);
+            this.button_dot.Name = "button_dot";
+            this.button_dot.Size = new System.Drawing.Size(192, 87);
+            this.button_dot.TabIndex = 9;
+            this.button_dot.Text = ".";
+            this.button_dot.Click += new System.EventHandler(this.button_dot_Click);
             // 
-            // roundButton3
+            // button_zero
             // 
-            this.roundButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton3.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton3.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton3.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton3.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton3.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton3.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton3.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton3.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton3.ButtonRoundRadius = 30;
-            this.roundButton3.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton3.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton3.Location = new System.Drawing.Point(195, 3);
-            this.roundButton3.Name = "roundButton3";
-            this.roundButton3.Size = new System.Drawing.Size(189, 87);
-            this.roundButton3.TabIndex = 2;
-            this.roundButton3.Text = "4";
+            this.button_zero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_zero.BackColor2 = System.Drawing.Color.Silver;
+            this.button_zero.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_zero.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_zero.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_zero.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_zero.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_zero.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_zero.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_zero.ButtonRoundRadius = 30;
+            this.button_zero.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_zero.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_zero.Location = new System.Drawing.Point(192, 454);
+            this.button_zero.Name = "button_zero";
+            this.button_zero.Size = new System.Drawing.Size(192, 87);
+            this.button_zero.TabIndex = 10;
+            this.button_zero.Text = "0";
+            this.button_zero.Click += new System.EventHandler(this.button_zero_Click);
             // 
-            // roundButton6
+            // button_minus
             // 
-            this.roundButton6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton6.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton6.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton6.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton6.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton6.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton6.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton6.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton6.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton6.ButtonRoundRadius = 30;
-            this.roundButton6.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton6.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton6.Location = new System.Drawing.Point(3, 3);
-            this.roundButton6.Name = "roundButton6";
-            this.roundButton6.Size = new System.Drawing.Size(192, 87);
-            this.roundButton6.TabIndex = 3;
-            this.roundButton6.Text = "5";
+            this.button_minus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_minus.BackColor2 = System.Drawing.Color.Silver;
+            this.button_minus.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_minus.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_minus.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_minus.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_minus.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_minus.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_minus.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_minus.ButtonRoundRadius = 30;
+            this.button_minus.Font = new System.Drawing.Font("Gadugi", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_minus.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_minus.Location = new System.Drawing.Point(384, 454);
+            this.button_minus.Name = "button_minus";
+            this.button_minus.Size = new System.Drawing.Size(90, 87);
+            this.button_minus.TabIndex = 11;
+            this.button_minus.Text = "−";
+            this.button_minus.Click += new System.EventHandler(this.button_minus_Click);
             // 
-            // roundButton7
+            // button_one
             // 
-            this.roundButton7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton7.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton7.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton7.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton7.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton7.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton7.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton7.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton7.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton7.ButtonRoundRadius = 30;
-            this.roundButton7.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton7.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton7.Location = new System.Drawing.Point(3, 3);
-            this.roundButton7.Name = "roundButton7";
-            this.roundButton7.Size = new System.Drawing.Size(192, 87);
-            this.roundButton7.TabIndex = 3;
-            this.roundButton7.Text = "3";
+            this.button_one.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_one.BackColor2 = System.Drawing.Color.Silver;
+            this.button_one.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_one.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_one.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_one.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_one.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_one.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_one.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_one.ButtonRoundRadius = 30;
+            this.button_one.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_one.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_one.Location = new System.Drawing.Point(0, 364);
+            this.button_one.Margin = new System.Windows.Forms.Padding(0);
+            this.button_one.Name = "button_one";
+            this.button_one.Size = new System.Drawing.Size(192, 87);
+            this.button_one.TabIndex = 12;
+            this.button_one.Text = "1";
+            this.button_one.Click += new System.EventHandler(this.button_one_Click);
             // 
-            // roundButton9
+            // button_two
             // 
-            this.roundButton9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton9.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton9.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton9.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton9.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton9.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton9.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton9.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton9.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton9.ButtonRoundRadius = 30;
-            this.roundButton9.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton9.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton9.Location = new System.Drawing.Point(0, 4);
-            this.roundButton9.Name = "roundButton9";
-            this.roundButton9.Size = new System.Drawing.Size(194, 87);
-            this.roundButton9.TabIndex = 3;
-            this.roundButton9.Text = "1";
+            this.button_two.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_two.BackColor2 = System.Drawing.Color.Silver;
+            this.button_two.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_two.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_two.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_two.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_two.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_two.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_two.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_two.ButtonRoundRadius = 30;
+            this.button_two.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_two.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_two.Location = new System.Drawing.Point(192, 364);
+            this.button_two.Margin = new System.Windows.Forms.Padding(0);
+            this.button_two.Name = "button_two";
+            this.button_two.Size = new System.Drawing.Size(192, 87);
+            this.button_two.TabIndex = 13;
+            this.button_two.Text = "2";
+            this.button_two.Click += new System.EventHandler(this.button_two_Click);
             // 
-            // roundButton10
+            // button_six
             // 
-            this.roundButton10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton10.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton10.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton10.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton10.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton10.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton10.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton10.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton10.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton10.ButtonRoundRadius = 30;
-            this.roundButton10.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton10.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton10.Location = new System.Drawing.Point(384, 3);
-            this.roundButton10.Name = "roundButton10";
-            this.roundButton10.Size = new System.Drawing.Size(90, 87);
-            this.roundButton10.TabIndex = 4;
-            this.roundButton10.Text = "÷";
+            this.button_six.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_six.BackColor2 = System.Drawing.Color.Silver;
+            this.button_six.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_six.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_six.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_six.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_six.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_six.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_six.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_six.ButtonRoundRadius = 30;
+            this.button_six.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_six.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_six.Location = new System.Drawing.Point(192, 186);
+            this.button_six.Margin = new System.Windows.Forms.Padding(0);
+            this.button_six.Name = "button_six";
+            this.button_six.Size = new System.Drawing.Size(192, 87);
+            this.button_six.TabIndex = 14;
+            this.button_six.Text = "6";
+            this.button_six.Click += new System.EventHandler(this.button_six_Click);
             // 
-            // roundButton12
+            // button_mul
             // 
-            this.roundButton12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton12.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton12.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton12.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton12.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton12.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton12.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton12.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton12.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton12.ButtonRoundRadius = 30;
-            this.roundButton12.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton12.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton12.Location = new System.Drawing.Point(384, 4);
-            this.roundButton12.Name = "roundButton12";
-            this.roundButton12.Size = new System.Drawing.Size(90, 87);
-            this.roundButton12.TabIndex = 4;
-            this.roundButton12.Text = "×";
+            this.button_mul.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_mul.BackColor2 = System.Drawing.Color.Silver;
+            this.button_mul.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_mul.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_mul.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_mul.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_mul.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_mul.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_mul.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_mul.ButtonRoundRadius = 30;
+            this.button_mul.Font = new System.Drawing.Font("Gadugi", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_mul.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_mul.Location = new System.Drawing.Point(384, 364);
+            this.button_mul.Name = "button_mul";
+            this.button_mul.Size = new System.Drawing.Size(90, 87);
+            this.button_mul.TabIndex = 15;
+            this.button_mul.Text = "×";
+            this.button_mul.Click += new System.EventHandler(this.button_mul_Click);
             // 
-            // roundButton13
+            // button_division
             // 
-            this.roundButton13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton13.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton13.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton13.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton13.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton13.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton13.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton13.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton13.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton13.ButtonRoundRadius = 30;
-            this.roundButton13.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton13.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton13.Location = new System.Drawing.Point(3, 449);
-            this.roundButton13.Name = "roundButton13";
-            this.roundButton13.Size = new System.Drawing.Size(93, 87);
-            this.roundButton13.TabIndex = 5;
-            this.roundButton13.Text = "(";
+            this.button_division.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_division.BackColor2 = System.Drawing.Color.Silver;
+            this.button_division.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_division.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_division.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_division.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_division.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_division.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_division.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_division.ButtonRoundRadius = 30;
+            this.button_division.Font = new System.Drawing.Font("Gadugi", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_division.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_division.Location = new System.Drawing.Point(384, 276);
+            this.button_division.Name = "button_division";
+            this.button_division.Size = new System.Drawing.Size(90, 87);
+            this.button_division.TabIndex = 16;
+            this.button_division.Text = "÷";
+            this.button_division.Click += new System.EventHandler(this.button_division_Click);
             // 
-            // roundButton14
+            // button_delete
             // 
-            this.roundButton14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton14.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton14.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton14.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton14.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton14.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton14.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton14.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton14.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton14.ButtonRoundRadius = 30;
-            this.roundButton14.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton14.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton14.Location = new System.Drawing.Point(102, 449);
-            this.roundButton14.Name = "roundButton14";
-            this.roundButton14.Size = new System.Drawing.Size(90, 87);
-            this.roundButton14.TabIndex = 6;
-            this.roundButton14.Text = ")";
+            this.button_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_delete.BackColor2 = System.Drawing.Color.Silver;
+            this.button_delete.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_delete.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_delete.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_delete.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_delete.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_delete.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_delete.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_delete.ButtonRoundRadius = 30;
+            this.button_delete.Font = new System.Drawing.Font("Gadugi", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_delete.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_delete.Location = new System.Drawing.Point(384, 186);
+            this.button_delete.Name = "button_delete";
+            this.button_delete.Size = new System.Drawing.Size(90, 87);
+            this.button_delete.TabIndex = 17;
+            this.button_delete.Text = "⌦";
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
-            // roundButton15
+            // textBox_input
             // 
-            this.roundButton15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton15.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton15.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton15.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton15.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton15.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton15.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton15.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton15.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton15.ButtonRoundRadius = 30;
-            this.roundButton15.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton15.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton15.Location = new System.Drawing.Point(198, 449);
-            this.roundButton15.Name = "roundButton15";
-            this.roundButton15.Size = new System.Drawing.Size(186, 87);
-            this.roundButton15.TabIndex = 7;
-            this.roundButton15.Text = "=";
+            this.textBox_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.textBox_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_input.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox_input.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_input.ForeColor = System.Drawing.SystemColors.Control;
+            this.textBox_input.Location = new System.Drawing.Point(0, 0);
+            this.textBox_input.Name = "textBox_input";
+            //this.textBox_input.ReadOnly = true;
+            this.textBox_input.Size = new System.Drawing.Size(475, 80);
+            this.textBox_input.TabIndex = 0;
+            this.textBox_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
-            // roundButton16
+            // button_five
             // 
-            this.roundButton16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton16.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton16.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton16.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton16.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton16.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton16.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton16.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton16.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton16.ButtonRoundRadius = 30;
-            this.roundButton16.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton16.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton16.Location = new System.Drawing.Point(384, 449);
-            this.roundButton16.Name = "roundButton16";
-            this.roundButton16.Size = new System.Drawing.Size(93, 87);
-            this.roundButton16.TabIndex = 8;
-            this.roundButton16.Text = "+";
+            this.button_five.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
+            this.button_five.BackColor2 = System.Drawing.Color.Silver;
+            this.button_five.ButtonBorderColor = System.Drawing.Color.Black;
+            this.button_five.ButtonHighlightColor = System.Drawing.Color.Orange;
+            this.button_five.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
+            this.button_five.ButtonHighlightForeColor = System.Drawing.Color.Black;
+            this.button_five.ButtonPressedColor = System.Drawing.Color.Red;
+            this.button_five.ButtonPressedColor2 = System.Drawing.Color.Maroon;
+            this.button_five.ButtonPressedForeColor = System.Drawing.Color.White;
+            this.button_five.ButtonRoundRadius = 30;
+            this.button_five.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_five.ForeColor = System.Drawing.SystemColors.Control;
+            this.button_five.Location = new System.Drawing.Point(0, 186);
+            this.button_five.Margin = new System.Windows.Forms.Padding(0);
+            this.button_five.Name = "button_five";
+            this.button_five.Size = new System.Drawing.Size(192, 87);
+            this.button_five.TabIndex = 19;
+            this.button_five.Text = "5";
+            this.button_five.Click += new System.EventHandler(this.button_five_Click);
             // 
-            // roundButton4
+            // textBox_output
             // 
-            this.roundButton4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton4.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton4.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton4.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton4.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton4.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton4.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton4.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton4.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton4.ButtonRoundRadius = 30;
-            this.roundButton4.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton4.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton4.Location = new System.Drawing.Point(3, 359);
-            this.roundButton4.Name = "roundButton4";
-            this.roundButton4.Size = new System.Drawing.Size(192, 87);
-            this.roundButton4.TabIndex = 9;
-            this.roundButton4.Text = ".";
-            // 
-            // roundButton8
-            // 
-            this.roundButton8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton8.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton8.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton8.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton8.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton8.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton8.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton8.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton8.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton8.ButtonRoundRadius = 30;
-            this.roundButton8.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton8.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton8.Location = new System.Drawing.Point(195, 359);
-            this.roundButton8.Name = "roundButton8";
-            this.roundButton8.Size = new System.Drawing.Size(192, 87);
-            this.roundButton8.TabIndex = 10;
-            this.roundButton8.Text = "0";
-            // 
-            // roundButton11
-            // 
-            this.roundButton11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
-            this.roundButton11.BackColor2 = System.Drawing.Color.Silver;
-            this.roundButton11.ButtonBorderColor = System.Drawing.Color.Black;
-            this.roundButton11.ButtonHighlightColor = System.Drawing.Color.Orange;
-            this.roundButton11.ButtonHighlightColor2 = System.Drawing.Color.OrangeRed;
-            this.roundButton11.ButtonHighlightForeColor = System.Drawing.Color.Black;
-            this.roundButton11.ButtonPressedColor = System.Drawing.Color.Red;
-            this.roundButton11.ButtonPressedColor2 = System.Drawing.Color.Maroon;
-            this.roundButton11.ButtonPressedForeColor = System.Drawing.Color.White;
-            this.roundButton11.ButtonRoundRadius = 30;
-            this.roundButton11.Font = new System.Drawing.Font("Gadugi", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roundButton11.ForeColor = System.Drawing.SystemColors.Control;
-            this.roundButton11.Location = new System.Drawing.Point(387, 359);
-            this.roundButton11.Name = "roundButton11";
-            this.roundButton11.Size = new System.Drawing.Size(90, 87);
-            this.roundButton11.TabIndex = 11;
-            this.roundButton11.Text = "−";
+            this.textBox_output.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.textBox_output.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_output.Dock = System.Windows.Forms.DockStyle.Top;
+            this.textBox_output.Font = new System.Drawing.Font("Gadugi", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_output.ForeColor = System.Drawing.SystemColors.Control;
+            this.textBox_output.Location = new System.Drawing.Point(0, 80);
+            this.textBox_output.Name = "textBox_output";
+            this.textBox_output.ReadOnly = true;
+            this.textBox_output.Size = new System.Drawing.Size(475, 80);
+            this.textBox_output.TabIndex = 0;
+            this.textBox_output.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form1
             // 
@@ -426,53 +427,57 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(477, 543);
-            this.Controls.Add(this.roundButton11);
-            this.Controls.Add(this.roundButton8);
-            this.Controls.Add(this.roundButton4);
-            this.Controls.Add(this.roundButton16);
-            this.Controls.Add(this.roundButton15);
-            this.Controls.Add(this.roundButton14);
-            this.Controls.Add(this.roundButton13);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.top_label);
+            this.ClientSize = new System.Drawing.Size(475, 633);
+            this.Controls.Add(this.textBox_output);
+            this.Controls.Add(this.button_five);
+            this.Controls.Add(this.textBox_input);
+            this.Controls.Add(this.button_delete);
+            this.Controls.Add(this.button_division);
+            this.Controls.Add(this.button_mul);
+            this.Controls.Add(this.button_six);
+            this.Controls.Add(this.button_two);
+            this.Controls.Add(this.button_one);
+            this.Controls.Add(this.button_minus);
+            this.Controls.Add(this.button_four);
+            this.Controls.Add(this.button_three);
+            this.Controls.Add(this.button_zero);
+            this.Controls.Add(this.button_dot);
+            this.Controls.Add(this.button_sum);
+            this.Controls.Add(this.button_equals);
+            this.Controls.Add(this.button_right_parenthesis);
+            this.Controls.Add(this.button_left_parenthesis);
+            this.KeyPreview = true;
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
-        private RoundButton roundButton4;
-        private RoundButton roundButton8;
-        private RoundButton roundButton11;
+        private System.Windows.Forms.TextBox textBox_output;
 
-        private RoundButton roundButton5;
-        private RoundButton roundButton6;
-        private RoundButton roundButton7;
-        private RoundButton roundButton9;
-        private RoundButton roundButton10;
-        private RoundButton roundButton12;
-        private RoundButton roundButton13;
-        private RoundButton roundButton14;
-        private RoundButton roundButton15;
-        private RoundButton roundButton16;
+        private RoundButton button_five;
 
-        private RoundButton roundButton1;
-        private RoundButton roundButton2;
-        private RoundButton roundButton3;
+        private System.Windows.Forms.TextBox textBox_input;
 
-        private System.Windows.Forms.Panel panel4;
+        private RoundButton button_one;
+        private RoundButton button_two;
+        private RoundButton button_mul;
+        private RoundButton button_division;
+        private RoundButton button_delete;
 
-        private System.Windows.Forms.Panel panel2;
+        private RoundButton button_dot;
+        private RoundButton button_zero;
+        private RoundButton button_minus;
 
-        private System.Windows.Forms.Panel panel1;
+        private RoundButton button_three;
+        private RoundButton button_left_parenthesis;
+        private RoundButton button_right_parenthesis;
+        private RoundButton button_equals;
+        private RoundButton button_sum;
 
-        private System.Windows.Forms.Label top_label;
+        private RoundButton button_six;
+        private RoundButton button_four;
 
         #endregion
     }

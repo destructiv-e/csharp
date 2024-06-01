@@ -17,8 +17,8 @@ public class RoundButton : Control
     public Color ButtonPressedColor2 { get; set; }
     public Color ButtonPressedForeColor { get; set; }
 
-    private bool IsHighlighted;
-    private bool IsPressed;
+    private bool _isHighlighted;
+    private bool _isPressed;
 
     public RoundButton()
     {
@@ -50,9 +50,9 @@ public class RoundButton : Control
     {
         e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
 
-        var foreColor = IsPressed ? ButtonPressedForeColor : IsHighlighted ? ButtonHighlightForeColor : ForeColor;
-        var backColor = IsPressed ? ButtonPressedColor : IsHighlighted ? ButtonHighlightColor : BackColor;
-        var backColor2 = IsPressed ? ButtonPressedColor2 : IsHighlighted ? ButtonHighlightColor2 : BackColor2;
+        var foreColor = _isPressed ? ButtonPressedForeColor : _isHighlighted ? ButtonHighlightForeColor : ForeColor;
+        var backColor = _isPressed ? ButtonPressedColor : _isHighlighted ? ButtonHighlightColor : BackColor;
+        var backColor2 = _isPressed ? ButtonPressedColor2 : _isHighlighted ? ButtonHighlightColor2 : BackColor2;
 
 
         using (var pen = new Pen(ButtonBorderColor, 1))
@@ -79,7 +79,7 @@ public class RoundButton : Control
     protected override void OnMouseEnter(EventArgs e)
     {
         base.OnMouseEnter(e);
-        IsHighlighted = true;
+        _isHighlighted = true;
         Parent.Invalidate(Bounds, false);
         Invalidate();
     }
@@ -87,8 +87,8 @@ public class RoundButton : Control
     protected override void OnMouseLeave(EventArgs e)
     {
         base.OnMouseLeave(e);
-        IsHighlighted = false;
-        IsPressed = false;
+        _isHighlighted = false;
+        _isPressed = false;
         Parent.Invalidate(Bounds, false);
         Invalidate();
     }
@@ -98,7 +98,7 @@ public class RoundButton : Control
         base.OnMouseDown(e);
         Parent.Invalidate(Bounds, false);
         Invalidate();
-        IsPressed = true;
+        _isPressed = true;
     }
 
     protected override void OnMouseUp(MouseEventArgs e)
@@ -106,7 +106,7 @@ public class RoundButton : Control
         base.OnMouseUp(e);
         Parent.Invalidate(Bounds, false);
         Invalidate();
-        IsPressed = false;
+        _isPressed = false;
     }
 
     protected GraphicsPath Path 
