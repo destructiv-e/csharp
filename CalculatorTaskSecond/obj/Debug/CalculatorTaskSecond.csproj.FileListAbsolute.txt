@@ -1,0 +1,10 @@
+C:\Users\HOME\RiderProjects\AtmTaskFirst\CalculatorTaskSecond\bin\Debug\CalculatorTaskSecond.exe.config
+C:\Users\HOME\RiderProjects\AtmTaskFirst\CalculatorTaskSecond\bin\Debug\CalculatorTaskSecond.pdb
+C:\Users\HOME\RiderProjects\AtmTaskFirst\CalculatorTaskSecond\obj\Debug\CalculatorTaskSecond.csproj.AssemblyReference.cache
+C:\Users\HOME\RiderProjects\AtmTaskFirst\CalculatorTaskSecond\obj\Debug\CalculatorTaskSecond.Properties.Resources.resources
+C:\Users\HOME\RiderProjects\AtmTaskFirst\CalculatorTaskSecond\obj\Debug\CalculatorTaskSecond.csproj.GenerateResource.cache
+C:\Users\HOME\RiderProjects\AtmTaskFirst\CalculatorTaskSecond\obj\Debug\CalculatorTaskSecond.csproj.CoreCompileInputs.cache
+C:\Users\HOME\RiderProjects\AtmTaskFirst\CalculatorTaskSecond\obj\Debug\CalculatorTaskSecond.exe
+C:\Users\HOME\RiderProjects\AtmTaskFirst\CalculatorTaskSecond\obj\Debug\CalculatorTaskSecond.pdb
+C:\Users\HOME\RiderProjects\AtmTaskFirst\CalculatorTaskSecond\obj\Debug\CalculatorTaskSecond.Form1.resources
+C:\Users\HOME\RiderProjects\AtmTaskFirst\CalculatorTaskSecond\obj\Debug\Calculat.88E28120.Up2Date
