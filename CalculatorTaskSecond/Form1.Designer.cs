@@ -379,7 +379,6 @@ namespace CalculatorTaskSecond
             this.textBox_input.ForeColor = System.Drawing.SystemColors.Control;
             this.textBox_input.Location = new System.Drawing.Point(0, 0);
             this.textBox_input.Name = "textBox_input";
-            //this.textBox_input.ReadOnly = true;
             this.textBox_input.Size = new System.Drawing.Size(475, 80);
             this.textBox_input.TabIndex = 0;
             this.textBox_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -449,7 +448,6 @@ namespace CalculatorTaskSecond
             this.KeyPreview = true;
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
