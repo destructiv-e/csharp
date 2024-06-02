@@ -66,11 +66,79 @@ namespace CalculatorTaskSecond
 
         private void button_dot_Click(object sender, EventArgs e)
         {
-            if (!textBox_input.Text.Contains("."))
+            if (CanPlaceDot(textBox_input.Text))
             {
                 textBox_input.Text += this.button_dot.Text;
             }
         }
+        
+  private bool CanPlaceDot(string input)
+{
+    if (input.Length > 0 && !input.Contains("."))
+    {
+        // Проверяем, что перед текущей позицией есть число
+        return IsNumberBeforeCurrentPosition(input);
+    }
+    else if (input.Contains("."))
+    {
+        // Если точка уже есть, проверяем, что после неё есть оператор и до этого оператора нет другой точки
+        int lastDotIndex = input.LastIndexOf('.');
+        return IsOperatorAfterDot(input, lastDotIndex);
+    }
+    return false; // Точка не может быть добавлена в пустую строку или после точки, если до этого не было оператора
+}
+
+private bool IsOperatorAfterDot(string input, int dotIndex)
+{
+    for (int i = dotIndex + 1; i < input.Length; i++)
+    {
+        if ("+-*/()".Contains(input[i]))
+        {
+            // После оператора должно быть число
+            for (int j = i + 1; j < input.Length; j++)
+            {
+                if ("0123456789".Contains(input[j]))
+                {
+                    return true;
+                }
+                if (input[j] == '.')
+                {
+                    return false; // Если нашли еще одну точку, возвращаем false
+                }
+                if ("+-*/()".Contains(input[j]))
+                {
+                    if (i + 1 == j && "()".Contains(input[j]))
+                    {
+                        return false; // Нельзя ставить скобки сразу после точки
+                    }
+                    return false; // Если после числа снова оператор, точку ставить нельзя
+                }
+            }
+            return false; // Если до конца строки не нашли числа, возвращаем false
+        }
+        if (input[i] == '.')
+        {
+            return false; // Если нашли еще одну точку, возвращаем false
+        }
+    }
+    return false; // Если до конца строки не нашли оператора, возвращаем false
+}
+
+private bool IsNumberBeforeCurrentPosition(string input)
+{
+    for (int i = input.Length - 1; i >= 0; i--)
+    {
+        if ("0123456789".Contains(input[i]))
+        {
+            return true; // Если последний символ - число, можно ставить точку
+        }
+        if ("+-*/()".Contains(input[i]))
+        {
+            return false; // Если последний символ - оператор, точку ставить нельзя
+        }
+    }
+    return false; // Если строка пуста или содержит только операторы, точку ставить нельзя
+}
 
         private void button_delete_Click(object sender, EventArgs e)
         {
@@ -86,13 +154,42 @@ namespace CalculatorTaskSecond
 
         private void button_right_parenthesis_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += @")";
+            if (CanPlaceParenthesisAfterDot())
+            {
+                textBox_input.Text += @")";
+            }
         }
 
         private void button_left_parenthesis_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += @"(";
+            if (CanPlaceParenthesisAfterDot())
+            {
+                textBox_input.Text += @"(";
+            }
         }
+        
+        private bool CanPlaceParenthesisAfterDot()
+        {
+            int lastDotIndex = textBox_input.Text.LastIndexOf('.');
+            if (lastDotIndex != -1)
+            {
+                // Проверяем, что после точки есть оператор или скобки уже есть
+                for (int i = lastDotIndex + 1; i < textBox_input.Text.Length; i++)
+                {
+                    if ("+-*/".Contains(textBox_input.Text[i]))
+                    {
+                        return true;
+                    }
+                    if (textBox_input.Text[i] == '(' || textBox_input.Text[i] == ')')
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            return true; // Если точки нет, можно ставить скобки
+        }
+
 
         private void button_equals_Click(object sender, EventArgs e)
         {
