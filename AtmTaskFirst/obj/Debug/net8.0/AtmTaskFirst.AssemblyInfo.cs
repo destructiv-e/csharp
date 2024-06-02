@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AtmTaskFirst")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2e5e19df5cf417188b05d99e4b50e61f9f7f4d5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95e84d006547c3292742d9e808b545c325cf1d8f")]
 [assembly: System.Reflection.AssemblyProductAttribute("AtmTaskFirst")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AtmTaskFirst")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

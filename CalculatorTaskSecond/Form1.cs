@@ -72,21 +72,44 @@ namespace CalculatorTaskSecond
             }
         }
         
-  private bool CanPlaceDot(string input)
-{
-    if (input.Length > 0 && !input.Contains("."))
-    {
-        // Проверяем, что перед текущей позицией есть число
-        return IsNumberBeforeCurrentPosition(input);
-    }
-    else if (input.Contains("."))
-    {
-        // Если точка уже есть, проверяем, что после неё есть оператор и до этого оператора нет другой точки
-        int lastDotIndex = input.LastIndexOf('.');
-        return IsOperatorAfterDot(input, lastDotIndex);
-    }
-    return false; // Точка не может быть добавлена в пустую строку или после точки, если до этого не было оператора
-}
+        private bool CanPlaceDot(string input)
+        {
+            if (input.Length > 0 && !input.Contains("."))
+            {
+               
+                return IsNumberBeforeCurrentPosition(input) && IsNumberAfterLastParenthesis(input);
+            }
+            else if (input.Contains("."))
+            {
+                
+                int lastDotIndex = input.LastIndexOf('.');
+                return IsOperatorAfterDot(input, lastDotIndex);
+            }
+            return false; 
+        }
+
+        private bool IsNumberAfterLastParenthesis(string input)
+        {
+            int lastOpenParenthesisIndex = input.LastIndexOf('(');
+            int lastCloseParenthesisIndex = input.LastIndexOf(')');
+            
+            if (lastCloseParenthesisIndex != -1 && lastCloseParenthesisIndex < input.Length - 1)
+            {
+                for (int i = lastCloseParenthesisIndex + 1; i < input.Length; i++)
+                {
+                    if ("0123456789".Contains(input[i]))
+                    {
+                        return true;
+                    }
+                    if ("+-*/(".Contains(input[i]))
+                    {
+                        return false;
+                    }
+                }
+                return false; 
+            }
+            return true; 
+        }
 
 private bool IsOperatorAfterDot(string input, int dotIndex)
 {
@@ -94,7 +117,7 @@ private bool IsOperatorAfterDot(string input, int dotIndex)
     {
         if ("+-*/()".Contains(input[i]))
         {
-            // После оператора должно быть число
+            
             for (int j = i + 1; j < input.Length; j++)
             {
                 if ("0123456789".Contains(input[j]))
@@ -103,25 +126,25 @@ private bool IsOperatorAfterDot(string input, int dotIndex)
                 }
                 if (input[j] == '.')
                 {
-                    return false; // Если нашли еще одну точку, возвращаем false
+                    return false; 
                 }
                 if ("+-*/()".Contains(input[j]))
                 {
                     if (i + 1 == j && "()".Contains(input[j]))
                     {
-                        return false; // Нельзя ставить скобки сразу после точки
+                        return false; 
                     }
-                    return false; // Если после числа снова оператор, точку ставить нельзя
+                    return false; 
                 }
             }
-            return false; // Если до конца строки не нашли числа, возвращаем false
+            return false;
         }
         if (input[i] == '.')
         {
-            return false; // Если нашли еще одну точку, возвращаем false
+            return false; 
         }
     }
-    return false; // Если до конца строки не нашли оператора, возвращаем false
+    return false; 
 }
 
 private bool IsNumberBeforeCurrentPosition(string input)
@@ -130,14 +153,14 @@ private bool IsNumberBeforeCurrentPosition(string input)
     {
         if ("0123456789".Contains(input[i]))
         {
-            return true; // Если последний символ - число, можно ставить точку
+            return true; 
         }
         if ("+-*/()".Contains(input[i]))
         {
-            return false; // Если последний символ - оператор, точку ставить нельзя
+            return false; 
         }
     }
-    return false; // Если строка пуста или содержит только операторы, точку ставить нельзя
+    return false; 
 }
 
         private void button_delete_Click(object sender, EventArgs e)
@@ -149,15 +172,27 @@ private bool IsNumberBeforeCurrentPosition(string input)
 
         private void button_sum_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += @"+";
+            if (CanPlaceOperatorAfterDot())
+            {
+                textBox_input.Text += @"+";
+            }
         }
 
         private void button_right_parenthesis_Click(object sender, EventArgs e)
         {
-            if (CanPlaceParenthesisAfterDot())
+            if (CanPlaceParenthesisAfterDot() && !IsFirstCharacter())
             {
                 textBox_input.Text += @")";
             }
+        }
+
+        private bool IsFirstCharacter()
+        {
+            if (textBox_input.Text.Length == 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void button_left_parenthesis_Click(object sender, EventArgs e)
@@ -173,21 +208,20 @@ private bool IsNumberBeforeCurrentPosition(string input)
             int lastDotIndex = textBox_input.Text.LastIndexOf('.');
             if (lastDotIndex != -1)
             {
-                // Проверяем, что после точки есть оператор или скобки уже есть
                 for (int i = lastDotIndex + 1; i < textBox_input.Text.Length; i++)
                 {
-                    if ("+-*/".Contains(textBox_input.Text[i]))
+                    if ("0123456789(".Contains(textBox_input.Text[i]))
                     {
                         return true;
                     }
-                    if (textBox_input.Text[i] == '(' || textBox_input.Text[i] == ')')
+                    if ("+-*/)".Contains(textBox_input.Text[i]))
                     {
-                        return true;
+                        return false;
                     }
                 }
-                return false;
+                return false; 
             }
-            return true; // Если точки нет, можно ставить скобки
+            return true; 
         }
 
 
@@ -208,36 +242,188 @@ private bool IsNumberBeforeCurrentPosition(string input)
 
         private void button_minus_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += @"-";
+            if (CanPlaceOperatorAfterDot())
+            {
+                textBox_input.Text += @"-";
+            }
         }
 
         private void button_mul_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += @"*";
+            if (CanPlaceMulAsFirstOperator() && CanPlaceOperatorAfterDot() && CanPlaceMulAfterCurrentOperator())
+            {
+                textBox_input.Text += @"*";
+            }
         }
 
         private void button_division_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += @"/";
+            if (CanPlaceDivAsFirstOperator() && CanPlaceOperatorAfterDot() && CanPlaceDivAfterCurrentOperator())
+            {
+                textBox_input.Text += @"/";
+            }
+        }
+        
+        private bool CanPlaceMulAsFirstOperator()
+        {
+            if (textBox_input.Text.Length == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool CanPlaceDivAsFirstOperator()
+        {
+            if (textBox_input.Text.Length == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private bool CanPlaceMulAfterCurrentOperator()
+        {
+            if (textBox_input.Text.Length > 0)
+            {
+                char lastChar = textBox_input.Text[textBox_input.Text.Length - 1];
+                if ("+-*/".Contains(lastChar))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool CanPlaceDivAfterCurrentOperator()
+        {
+            if (textBox_input.Text.Length > 0)
+            {
+                char lastChar = textBox_input.Text[textBox_input.Text.Length - 1];
+                if ("+-*/".Contains(lastChar))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        
+        private bool CanPlaceOperatorAfterDot()
+        {
+            int lastDotIndex = textBox_input.Text.LastIndexOf('.');
+            if (lastDotIndex != -1)
+            {
+                
+                for (int i = lastDotIndex + 1; i < textBox_input.Text.Length; i++)
+                {
+                    if ("0123456789(".Contains(textBox_input.Text[i]))
+                    {
+                        return true;
+                    }
+                    if ("+-*/)".Contains(textBox_input.Text[i]))
+                    {
+                        return false;
+                    }
+                }
+                return false; 
+            }
+            return true; 
         }
 
         private void KeyPress(object sender, KeyPressEventArgs e)
         {
-            char c = e.KeyChar;
-            if (c == '\b') {
-                if (textBox_input.Text.Length > 0) {
-                    textBox_input.Text.Remove(textBox_input.Text.Length - 1);
+      char c = e.KeyChar;
+
+    // Handle backspace
+    if (c == '\b')
+    {
+        if (textBox_input.Text.Length > 0)
+        {
+            textBox_input.Text = textBox_input.Text.Remove(textBox_input.Text.Length - 1);
+        }
+        e.Handled = true; // Ensure that the event is handled and not passed further
+        return;
+    }
+
+    // Handle Enter key
+    if (c == '\r')
+    {
+        this.button_equals_Click(sender, EventArgs.Empty);
+        e.Handled = true; // Ensure that the event is handled and not passed further
+        return;
+    }
+
+    // Handle valid characters
+    if (checking_for_the_validity_of_the_input(c))
+    {
+        if (char.IsDigit(c))
+        {
+            textBox_input.Text += c;
+        }
+        else if (c == '.')
+        {
+            if (CanPlaceDot(textBox_input.Text))
+            {
+                textBox_input.Text += c;
+            }
+        }
+        else if ("+-*/()".Contains(c))
+        {
+            if (CanPlaceOperatorOrParenthesisAfterDot(c))
+            {
+                // Allow ( + - at the beginning of the line
+                if (textBox_input.Text.Length == 0 && (c == '(' || c == '+' || c == '-'))
+                {
+                    textBox_input.Text += c;
                 }
-                return;
+                else if (textBox_input.Text.Length > 0)
+                {
+                    char lastChar = textBox_input.Text[textBox_input.Text.Length - 1];
+                    if ("+-".Contains(lastChar) && (c == '*' || c == '/')) // Prevent * and / after + or -
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+                    textBox_input.Text += c;
+                }
             }
-            else if (c == '\r') {
-               // this.ErrorMsg.Visible = false;
-                this.button_equals_Click(sender, e);
-            }
-            else if (checking_for_the_validity_of_the_input(c)) {
-                return;
+        }
+        else if (c == '=') // New handling for the equals sign
+        {
+            if (textBox_input.Text.Length > 0)
+            {
+                this.button_equals_Click(sender, EventArgs.Empty);
             }
             e.Handled = true;
+            return;
         }
+        e.Handled = true; // Ensure that the event is handled and not passed further
+        return;
+    }
+
+    // If the character is not valid, handle it
+    e.Handled = true;
+}
+
+private bool CanPlaceOperatorOrParenthesisAfterDot(char c)
+{
+    int lastDotIndex = textBox_input.Text.LastIndexOf('.');
+    if (lastDotIndex != -1)
+    {
+        for (int i = lastDotIndex + 1; i < textBox_input.Text.Length; i++)
+        {
+            if ("0123456789(".Contains(textBox_input.Text[i]))
+            {
+                return true;
+            }
+            if ("+-*/)".Contains(textBox_input.Text[i]))
+            {
+                return false;
+            }
+        }
+        return false;
+    }
+    return true;
+}
     }
 }

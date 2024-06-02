@@ -28,140 +28,55 @@ namespace CustomCalc {
             }
         }
 
-        public void getInput(char[] input) {
-            char[] number = new char[initSize / 2];
-            char prev = ' ';
-            int numInd = 0;
-            bool isPositive = true;
-            bool isPt = false;
-            int openBr = 0;
-            for (int i = 0; i < input.Length; ++i) {
-                char cur = input[i];
-                if (char.IsDigit(cur) || cur == '.') {
-                    if ((this.list.Count > 0 && (prev == '+' || prev == '-')) || prev == '(') {
-                        addOp('+');
-                    }
-                    if (prev != ')') {
-                        while (char.IsDigit(cur) || cur == '.') {
-                            if (numInd == number.Length) {
-                                Array.Resize<char>(ref number, number.Length * 2);
-                            }
-                            number[numInd++] = cur;
-                            if (++i == input.Length) {
-                                break;
-                            }
-                            cur = input[i];
-                        }
-                        --i;
-                    } else {
-                        this.list.Clear();
-                        this.ops.Clear();
-                        throw new Exception("Mistake in index: " + (i + 1));
-                    }
-                } else if (cur == '.') {
-                    if ((char.IsDigit(prev) || prev == '+' || prev == '-' || prev == '*' || prev == '/' || prev == '(') && !isPt) {
-                        number[numInd++] = '.';
-                        isPt = true;
-                    } else {
-                        this.list.Clear();
-                        this.ops.Clear();
-                        throw new Exception("Mistake in index: " + (i + 1));
-                    }
-                } else {
-                    Array.Resize(ref number, numInd);
-                    if (number.Length > 0) {
-                        if (!isPositive) {
-                            Array.Resize(ref number, numInd + 1);
-                            number[numInd] = '-';
-                        }
-                        this.list.Add(number);
-                        isPositive = true;
-                    }
-                    number = new char[initSize / 2];
-                    numInd = 0;
-                    isPt = false;
-                    if (cur == '+' || cur == '-') {
-                        if (prev == '*' || prev == '/') {
-                            this.list.Clear();
-                            this.ops.Clear();
-                            throw new Exception("Mistake in index: " + (i + 1));
-                        }
-                        bool seenOperator = false;
-                        while (cur == '+' || cur == '-') {
-                            if (cur == '-') {
-                                isPositive = !isPositive;
-                            }
-                            seenOperator = true;
-                            if (++i == input.Length) {
-                                break;
-                            }
-                            cur = input[i];
-                        }
-                        --i;
-                        if (!seenOperator) {
-                            addOp('+');
-                        }
+       public void getInput(char[] input) {
+    // Проверка, если первый символ - минус, добавляем 0 перед ним
+    if (input[0] == '-') {
+        Array.Resize(ref input, input.Length + 1);
+        for (int i = input.Length - 1; i > 0; i--) {
+            input[i] = input[i - 1];
+        }
+        input[0] = '0';
+    }
 
-                    } else if (cur == '*') {
-                        if (prev == ')' || prev == '.' || char.IsDigit(prev)) {
-                            addOp('*');
-                        } else {
-                            this.list.Clear();
-                            this.ops.Clear();
-                            throw new Exception("Mistake in index: " + (i + 1));
-                        }
-                    } else if (cur == '/') {
-                        if (prev == ')' || prev == '.' || char.IsDigit(prev)) {
-                            addOp('/');
-                        } else {
-                            this.list.Clear();
-                            this.ops.Clear();
-                            throw new Exception("Mistake in index: " + (i + 1));
-                        }
-                    } else if (cur == '(') {
-                        if (prev == '+' || prev == '-' || prev == '*' || prev == '/' || prev == '(' || prev == ')' || prev == ' ') {
-                            if (prev == '+' || prev == '-') {
-                                if (isPositive) {
-                                    addOp('+');
-                                } else {
-                                    addOp('-');
-                                }
-                                isPositive = true;
-                            }
-                            this.ops.Push('(');
-                            openBr++;
-                            if (prev != '(') {
-                                char[] temp = new char[1];
-                                temp[0] = '0';
-                                this.list.Add(temp);
-                            }
-                        } else {
-                            this.list.Clear();
-                            this.ops.Clear();
-                            throw new Exception("Mistake in index: " + (i + 1));
-                        }
-                    } else if (cur == ')') {
-                        if ((char.IsDigit(prev) || prev == '.' || prev == ')') && openBr > 0) {
-                            openBr--;
-                            addOp(')');
-                        } else {
-                            this.list.Clear();
-                            this.ops.Clear();
-                            throw new Exception("Mistake in index: " + (i + 1));
-                        }
-                    } else {
-                        this.list.Clear();
-                        this.ops.Clear();
-                        throw new Exception("Mistake in index: " + (i + 1));
-                    }
-                }
-                prev = input[i];
+    char[] number = new char[initSize / 2];
+    char prev = ' ';
+    int numInd = 0;
+    bool isPositive = true;
+    bool isPt = false;
+    int openBr = 0;
+    for (int i = 0; i < input.Length; ++i) {
+        char cur = input[i];
+        if (char.IsDigit(cur) || cur == '.') {
+            if ((this.list.Count > 0 && (prev == '+' || prev == '-')) || prev == '(') {
+                addOp('+');
             }
-            if (openBr > 0) {
+            if (prev != ')') {
+                while (char.IsDigit(cur) || cur == '.') {
+                    if (numInd == number.Length) {
+                        Array.Resize<char>(ref number, number.Length * 2);
+                    }
+                    number[numInd++] = cur;
+                    if (++i == input.Length) {
+                        break;
+                    }
+                    cur = input[i];
+                }
+                --i;
+            } else {
                 this.list.Clear();
                 this.ops.Clear();
-                throw new Exception("Close parenthesis!!");
+                throw new Exception("Mistake in index: " + (i + 1));
             }
+        } else if (cur == '.') {
+            if ((char.IsDigit(prev) || prev == '+' || prev == '-' || prev == '*' || prev == '/' || prev == '(') && !isPt) {
+                number[numInd++] = '.';
+                isPt = true;
+            } else {
+                this.list.Clear();
+                this.ops.Clear();
+                throw new Exception("Mistake in index: " + (i + 1));
+            }
+        } else {
             Array.Resize(ref number, numInd);
             if (number.Length > 0) {
                 if (!isPositive) {
@@ -169,9 +84,103 @@ namespace CustomCalc {
                     number[numInd] = '-';
                 }
                 this.list.Add(number);
+                isPositive = true;
             }
-            addOp('+');
+            number = new char[initSize / 2];
+            numInd = 0;
+            isPt = false;
+            if (cur == '+' || cur == '-') {
+                if (prev == '*' || prev == '/') {
+                    this.list.Clear();
+                    this.ops.Clear();
+                    throw new Exception("Mistake in index: " + (i + 1));
+                }
+                bool seenOperator = false;
+                while (cur == '+' || cur == '-') {
+                    if (cur == '-') {
+                        isPositive = !isPositive;
+                    }
+                    seenOperator = true;
+                    if (++i == input.Length) {
+                        break;
+                    }
+                    cur = input[i];
+                }
+                --i;
+                if (!seenOperator) {
+                    addOp('+');
+                }
+
+            } else if (cur == '*') {
+                if (prev == ')' || prev == '.' || char.IsDigit(prev)) {
+                    addOp('*');
+                } else {
+                    this.list.Clear();
+                    this.ops.Clear();
+                    throw new Exception("Mistake in index: " + (i + 1));
+                }
+            } else if (cur == '/') {
+                if (prev == ')' || prev == '.' || char.IsDigit(prev)) {
+                    addOp('/');
+                } else {
+                    this.list.Clear();
+                    this.ops.Clear();
+                    throw new Exception("Mistake in index: " + (i + 1));
+                }
+            } else if (cur == '(') {
+                if (prev == '+' || prev == '-' || prev == '*' || prev == '/' || prev == '(' || prev == ')' || prev == ' ') {
+                    if (prev == '+' || prev == '-') {
+                        if (isPositive) {
+                            addOp('+');
+                        } else {
+                            addOp('-');
+                        }
+                        isPositive = true;
+                    }
+                    this.ops.Push('(');
+                    openBr++;
+                    if (prev != '(') {
+                        char[] temp = new char[1];
+                        temp[0] = '0';
+                        this.list.Add(temp);
+                    }
+                } else {
+                    this.list.Clear();
+                    this.ops.Clear();
+                    throw new Exception("Mistake in index: " + (i + 1));
+                }
+            } else if (cur == ')') {
+                if ((char.IsDigit(prev) || prev == '.' || prev == ')') && openBr > 0) {
+                    openBr--;
+                    addOp(')');
+                } else {
+                    this.list.Clear();
+                    this.ops.Clear();
+                    throw new Exception("Mistake in index: " + (i + 1));
+                }
+            } else {
+                this.list.Clear();
+                this.ops.Clear();
+                throw new Exception("Mistake in index: " + (i + 1));
+            }
         }
+        prev = input[i];
+    }
+    if (openBr > 0) {
+        this.list.Clear();
+        this.ops.Clear();
+        throw new Exception("Close parenthesis!!");
+    }
+    Array.Resize(ref number, numInd);
+    if (number.Length > 0) {
+        if (!isPositive) {
+            Array.Resize(ref number, numInd + 1);
+            number[numInd] = '-';
+        }
+        this.list.Add(number);
+    }
+    addOp('+');
+}
         
         private void addOp(char op) {
             char lastOp;
