@@ -49,6 +49,7 @@ namespace CalculatorTaskSecond
             this.textBox_input = new System.Windows.Forms.TextBox();
             this.button_five = new RoundButton();
             this.textBox_output = new System.Windows.Forms.TextBox();
+            this.ErrorMsg = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button_three
@@ -382,6 +383,7 @@ namespace CalculatorTaskSecond
             this.textBox_input.Size = new System.Drawing.Size(475, 80);
             this.textBox_input.TabIndex = 0;
             this.textBox_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_input.TextChanged += new System.EventHandler(this.textBox_input_TextChanged);
             this.textBox_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.KeyPress);
             // 
             // button_five
@@ -420,6 +422,20 @@ namespace CalculatorTaskSecond
             this.textBox_output.TabIndex = 0;
             this.textBox_output.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // ErrorMsg
+            // 
+            this.ErrorMsg.AutoSize = true;
+            this.ErrorMsg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+            this.ErrorMsg.Font = new System.Drawing.Font("Gadugi", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ErrorMsg.ForeColor = System.Drawing.SystemColors.Control;
+            this.ErrorMsg.Location = new System.Drawing.Point(0, 115);
+            this.ErrorMsg.Name = "ErrorMsg";
+            this.ErrorMsg.Size = new System.Drawing.Size(129, 45);
+            this.ErrorMsg.TabIndex = 20;
+            this.ErrorMsg.Text = "label1";
+            this.ErrorMsg.Visible = false;
+            this.ErrorMsg.Click += new System.EventHandler(this.ErrorMsg_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -427,6 +443,7 @@ namespace CalculatorTaskSecond
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(475, 633);
+            this.Controls.Add(this.ErrorMsg);
             this.Controls.Add(this.textBox_output);
             this.Controls.Add(this.button_five);
             this.Controls.Add(this.textBox_input);
@@ -452,6 +469,8 @@ namespace CalculatorTaskSecond
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.Label ErrorMsg;
+
         private System.Windows.Forms.TextBox textBox_output;
 
         private RoundButton button_five;
@@ -476,6 +495,7 @@ namespace CalculatorTaskSecond
 
         private RoundButton button_six;
         private RoundButton button_four;
+        
 
         #endregion
     }

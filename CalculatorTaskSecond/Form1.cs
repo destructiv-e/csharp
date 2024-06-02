@@ -456,5 +456,15 @@ private bool CanPlaceOperatorOrParenthesisAfterDot(char c)
     }
     return true;
 }
+
+private void textBox_input_TextChanged(object sender, EventArgs e)
+{
+    textBox_input.SelectionStart = textBox_input.Text.Length;
+}
+
+private void ErrorMsg_Click(object sender, EventArgs e)
+{
+    ErrorMsg.Visible = false;
+}
     }
 }

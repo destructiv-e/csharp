@@ -245,80 +245,96 @@ namespace CustomCalc {
         }
 
         public char[] countExpression() {
-            if (this.list.Count == 0) {
-                this.list.Clear();
-                this.ops.Clear();
-                throw new Exception("No numbers provided");
-            }
-            Object[] syms = this.list.ToArray();
-            Stack<Double> nums = new Stack<double>(this.list.Count);
-            double eps = 0.004115226337;
-            for (int i = 0; i < syms.Length; ++i) {
-                double n1 = 0, n2 = 0;
-                if (syms[i].Equals('+')) {
-                    if (nums.Count >= 2) {
-                        n2 = nums.Pop();
-                        n1 = nums.Pop();
-                        double temp = n1 + n2;
-                        nums.Push(temp);
-                    } else {
-                        this.list.Clear();
-                        this.ops.Clear();
-                        throw new Exception("Too many operators");
-                    }
-                } else if (syms[i].Equals('-')) {
-                    if (nums.Count >= 2) {
-                        n2 = nums.Pop();
-                        n1 = nums.Pop();
-                        double temp = n1 - n2;
-                        nums.Push(temp);
-                    } else {
-                        this.list.Clear();
-                        this.ops.Clear();
-                        throw new Exception("Too many operators");
-                    }
-                } else if (syms[i].Equals('*')) {
-                    if (nums.Count >= 2) {
-                        n2 = nums.Pop();
-                        n1 = nums.Pop();
-                        double temp = n1 * n2;
-                        nums.Push(temp);
-                    } else {
-                        this.list.Clear();
-                        this.ops.Clear();
-                        throw new Exception("Too many operators");
-                    }
-                } else if (syms[i].Equals('/')) {
-                    if (nums.Count >= 2) {
-                        n2 = nums.Pop();
-                        n1 = nums.Pop();
-                        double temp = n1 / n2;
-                        if (Double.IsNaN(temp) || Double.IsInfinity(temp)) {
-                            this.list.Clear();
-                            this.ops.Clear();
-                            throw new Exception("Division by zero");
-                        }
-                        nums.Push(temp);
-                    } else {
-                        this.list.Clear();
-                        this.ops.Clear();
-                        throw new Exception("Too many operators");
-                    }
-                } else {
-                    nums.Push(convertDNSToDec((char[])syms[i], ns));
-                }
-            }
-            if (nums.Count != 1) {
-                this.list.Clear();
-                this.ops.Clear();
-                throw new Exception("Invalid expression");
-            }
-            double res = nums.Pop();
-            this.list.Clear();
-            this.ops.Clear();
-            nums.Clear();
-            return convertDecToDNS(res, ns);
+    if (this.list.Count == 0) {
+        this.list.Clear();
+        this.ops.Clear();
+        throw new Exception("No numbers provided");
+    }
+
+    // Проверка, что в списке операций есть хотя бы одно число
+    bool hasNumbers = false;
+    foreach (var item in this.list) {
+        if (item is char[] && ((char[])item).Length > 0) {
+            hasNumbers = true;
+            break;
         }
+    }
+
+    if (!hasNumbers) {
+        this.list.Clear();
+        this.ops.Clear();
+        throw new Exception("No numbers provided");
+    }
+
+    Object[] syms = this.list.ToArray();
+    Stack<Double> nums = new Stack<double>(this.list.Count);
+    double eps = 0.004115226337;
+    for (int i = 0; i < syms.Length; ++i) {
+        double n1 = 0, n2 = 0;
+        if (syms[i].Equals('+')) {
+            if (nums.Count >= 2) {
+                n2 = nums.Pop();
+                n1 = nums.Pop();
+                double temp = n1 + n2;
+                nums.Push(temp);
+            } else {
+                this.list.Clear();
+                this.ops.Clear();
+                throw new Exception("Too many operators");
+            }
+        } else if (syms[i].Equals('-')) {
+            if (nums.Count >= 2) {
+                n2 = nums.Pop();
+                n1 = nums.Pop();
+                double temp = n1 - n2;
+                nums.Push(temp);
+            } else {
+                this.list.Clear();
+                this.ops.Clear();
+                throw new Exception("Too many operators");
+            }
+        } else if (syms[i].Equals('*')) {
+            if (nums.Count >= 2) {
+                n2 = nums.Pop();
+                n1 = nums.Pop();
+                double temp = n1 * n2;
+                nums.Push(temp);
+            } else {
+                this.list.Clear();
+                this.ops.Clear();
+                throw new Exception("Too many operators");
+            }
+        } else if (syms[i].Equals('/')) {
+            if (nums.Count >= 2) {
+                n2 = nums.Pop();
+                n1 = nums.Pop();
+                double temp = n1 / n2;
+                if (Double.IsNaN(temp) || Double.IsInfinity(temp)) {
+                    this.list.Clear();
+                    this.ops.Clear();
+                    throw new Exception("Division by zero");
+                }
+                nums.Push(temp);
+            } else {
+                this.list.Clear();
+                this.ops.Clear();
+                throw new Exception("Too many operators");
+            }
+        } else {
+            nums.Push(convertDNSToDec((char[])syms[i], ns));
+        }
+    }
+    if (nums.Count != 1) {
+        this.list.Clear();
+        this.ops.Clear();
+        throw new Exception("Invalid expression");
+    }
+    double res = nums.Pop();
+    this.list.Clear();
+    this.ops.Clear();
+    nums.Clear();
+    return convertDecToDNS(res, ns);
+}
 
 
         public char[] convertDecToDNS(double num, ulong ns) {
