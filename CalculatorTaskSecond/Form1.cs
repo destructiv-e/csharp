@@ -15,7 +15,8 @@ namespace CalculatorTaskSecond
     {
         RPN rpn;
         private readonly HashSet<char> _validChars = new HashSet<char> { '0', '1', '2', '3', '4', '5', '6', '+', '-', '*', '/', '(', ')', '.' };
-
+        private int bracketBalance = 0;
+        
         
         public Form1()
         {
@@ -165,7 +166,14 @@ private bool IsNumberBeforeCurrentPosition(string input)
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            if (textBox_input.Text.Length > 0) {
+            if (textBox_input.Text.Length > 0)
+            {
+                char lastChar = textBox_input.Text[textBox_input.Text.Length - 1];
+                if (lastChar == '(')
+                    bracketBalance--;
+                else if (lastChar == ')')
+                    bracketBalance++;
+
                 textBox_input.Text = textBox_input.Text.Remove(textBox_input.Text.Length - 1);
             }
         }
@@ -180,9 +188,10 @@ private bool IsNumberBeforeCurrentPosition(string input)
 
         private void button_right_parenthesis_Click(object sender, EventArgs e)
         {
-            if (CanPlaceParenthesisAfterDot() && !IsFirstCharacter())
+            if (CanPlaceParenthesisAfterDot() && !IsFirstCharacter() && bracketBalance > 0)
             {
                 textBox_input.Text += @")";
+                bracketBalance--;
             }
         }
 
@@ -200,6 +209,7 @@ private bool IsNumberBeforeCurrentPosition(string input)
             if (CanPlaceParenthesisAfterDot())
             {
                 textBox_input.Text += @"(";
+                bracketBalance++;
             }
         }
         
@@ -332,13 +342,19 @@ private bool IsNumberBeforeCurrentPosition(string input)
 
         private void KeyPress(object sender, KeyPressEventArgs e)
         {
-      char c = e.KeyChar;
+     char c = e.KeyChar;
 
     // Handle backspace
     if (c == '\b')
     {
         if (textBox_input.Text.Length > 0)
         {
+            char lastChar = textBox_input.Text[textBox_input.Text.Length - 1];
+            if (lastChar == '(')
+                bracketBalance--;
+            else if (lastChar == ')')
+                bracketBalance++;
+
             textBox_input.Text = textBox_input.Text.Remove(textBox_input.Text.Length - 1);
         }
         e.Handled = true; // Ensure that the event is handled and not passed further
@@ -371,21 +387,36 @@ private bool IsNumberBeforeCurrentPosition(string input)
         {
             if (CanPlaceOperatorOrParenthesisAfterDot(c))
             {
-                // Allow ( + - at the beginning of the line
-                if (textBox_input.Text.Length == 0 && (c == '(' || c == '+' || c == '-'))
+                if (c == '(')
                 {
-                    textBox_input.Text += c;
+                    bracketBalance++;
                 }
-                else if (textBox_input.Text.Length > 0)
+                else if (c == ')')
                 {
-                    char lastChar = textBox_input.Text[textBox_input.Text.Length - 1];
-                    if ("+-".Contains(lastChar) && (c == '*' || c == '/')) // Prevent * and / after + or -
+                    if (bracketBalance > 0)
                     {
-                        e.Handled = true;
+                        bracketBalance--;
+                    }
+                    else
+                    {
+                        e.Handled = true; // Prevent closing parenthesis if there's no matching opening one
                         return;
                     }
-                    textBox_input.Text += c;
                 }
+                // Check if the operator is * or / and if it's the first character or multiple in a row
+                if (c == '*' || c == '/')
+                {
+                    if (textBox_input.Text.Length == 0 || textBox_input.Text[textBox_input.Text.Length - 1] == '*' || textBox_input.Text[textBox_input.Text.Length - 1] == '/')
+                    {
+                        e.Handled = true; // Prevent input
+                        return;
+                    }
+                }
+                else if (c == '+' || c == '-')
+                {
+                    return;
+                }
+                textBox_input.Text += c;
             }
         }
         else if (c == '=') // New handling for the equals sign
